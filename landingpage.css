@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #eaeaea;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #1e1e1e;
+  }
+
+  header .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+
+  nav a:hover {
+    color: #fff;
+  }
+
+  .caption {
+    padding: 3rem 2rem;
+  }
+
+  .caption h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+  }
+
+  .caption p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #bbb;
+  }
+
+  .caption button {
+    background: #888;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .caption button:hover {
+    background: #ffffff;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;  /*currently does not work yet - simply snaps back*/
+  }
+
+  button a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 3rem auto;
+    text-align: left;
+  }
+
+  .feature {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .feature h3 {
+    margin-top: 0.5rem;
+    color: #ccc;
+  }
+
+  .feature p {
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+
+  .sub-caption {
+    margin: 3rem auto;
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  .sub-caption h2 {
+    margin-bottom: 1rem;
+    color: #ccc;
+  }
+
+  footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .list {
+    margin: 1rem auto;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #eaeaea;
+  }
+  
+  .list h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+  }
+  
+  .list ol {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .list ul {
+    position: relative;
+    margin-bottom: 2rem;
+  }
