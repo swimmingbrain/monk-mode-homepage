@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - Vimaya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/logo.png">
+    <meta name="robots" content="noindex">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Vimaya logo" style="height:40px; width:auto; display:block;" /></a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="index.html#download">Download</a></li>
+                <li><a href="mailto:contact@vimaya.com">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="legal-container">
+        <h1>Impressum</h1>
+        <div class="meta">According to § 5 TMG</div>
+        <div class="legal-card">
+            <h2>Company</h2>
+            <p>VIMAYA (haftungsbeschränkt)</p>
+
+            <h2>Represented by</h2>
+            <p>Aisha Faller</p>
+            <p>Braian Plaku</p>
+            <p>David Maurer</p>
+
+            <h2>Contact</h2>
+            <p>E-mail: <a href="mailto:contact@vimaya.com">contact@vimaya.com</a></p>
+
+            <h2>Liability for Contents</h2>
+            <p>As a service provider, we are responsible for our own contents on these pages in accordance with § 7 Abs.1 TMG. According to §§ 8 to 10 TMG, we are not obligated to monitor transmitted or stored information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general laws remain unaffected.</p>
+
+            <h2>Liability for Links</h2>
+            <p>Our offer contains links to external websites of third parties on whose contents we have no influence. Therefore we cannot assume any liability for these external contents.</p>
+
+            <h2>Copyright</h2>
+            <p>The contents and works created by us on these pages are subject to Austrian copyright law. Duplication, processing, distribution, and any kind of utilization outside the limits of copyright require the written consent of the respective author or creator.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Vimaya</h3>
+                    <p>Take control of your digital life. Build focus, create healthy habits, and achieve more with intentional technology use.</p>
+                    <a href="#" class="download-btn">
+                        <span>Download (Available SOON)</span>
+                    </a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://instagram.com/vimaya.app" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="mailto:contact@vimaya.com">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vimaya. All rights reserved. Made with ❤️ for digital wellness.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle?.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+

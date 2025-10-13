@@ -3,55 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vimaya Landing Page</title>
-    <link rel="stylesheet" type="text/css" href=landingpage.css>
+    <title>Vimaya - Master Your Digital Focus</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    
+    <!-- Header -->
     <header>
-        <div class="logo"> VIMAYA </div>
         <nav>
-            <a href="features.html"> Features </a>
-            <a href="product.html"> Product </a>
+            <div class="logo"><img src="images/logo.png" alt="Vimaya logo" style="height:40px; width:auto; display:block;" /></div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="mailto:contact@vimaya.com">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
-
-    <section class="caption">
-        <h1> Focus Better. Achieve More. Own Your Day. </h1>
-        <p> Track your focus, plan your day, and turn productivity into a rewarding habit. </p>
-        <button><a href="(appstore link will go here)"> Download </a></button>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Achieve more. Own today.</h1>
+                <p>Transform your relationship with technology. Build healthier habits, structure your time intentionally, and unlock your full potential with Vimaya.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#download" class="btn-primary">Get Started Free</a>
+                    <a href="#features" class="btn-secondary">Learn More</a>
+                </div>
+                
+                <!-- Gamification Stats -->
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-icon xp">⚡</div>
+                        <div>
+                            <div class="stat-value" id="xp-counter">0</div>
+                            <div class="stat-label">XP Earned</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon streak">🔥</div>
+                        <div>
+                            <div class="stat-value" id="streak-counter">0</div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon level">⭐</div>
+                        <div>
+                            <div class="stat-value" id="level-counter">1</div>
+                            <div class="stat-label">Level</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="phone-preview">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="screenshot-carousel" id="carousel">
+                            <div class="screenshot"><img src="images/screenshot1.jpeg" alt="App screenshot 1" /></div>
+                            <div class="screenshot"><img src="images/screenshot2.jpeg" alt="App screenshot 2" /></div>
+                            <div class="screenshot"><img src="images/screenshot3.jpeg" alt="App screenshot 3" /></div>
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="setSlide(0)"></span>
+                            <span class="dot" onclick="setSlide(1)"></span>
+                            <span class="dot" onclick="setSlide(2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <section class="features">
-        <div class="feature">
-            <h3> 🎯 Focus </h3>
-            <p> Activate Focus Mode to block distractions and track your productive time seamlessly. Stay in control and make every minute count. </p>
-        </div>
-        <div class="feature">
-            <h3> 📆 Plan </h3>
-            <p> Organize your day with ease by creating time blocks for focus and leisure. Build a routine that helps you achieve your goals. </p>
-        </div>
-        <div class="feature">
-            <h3> 🎮 Gamification </h3>
-            <p> Turn productivity into a game by earning XP and celebrating milestones. See your progress grow and stay inspired to reach new heights. </p>
-        </div>
-        <div class="feature">
-            <h3> 👥 Community </h3>
-            <p> Connect with like-minded individuals who share your goals. Share progress, exchange tips, and keep each other motivated. </p>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">Features That Empower</h2>
+            <p class="section-subtitle">Everything you need to build a healthier digital lifestyle</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Focus Sessions</h3>
+                    <p>Deep work made simple. Block distractions and stay in the zone with customizable focus sessions.</p>
+                    <div class="progress-showcase">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Smart Analytics</h3>
+                    <p>Understand your digital patterns. Get insights into your screen time and productivity trends.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Gamified Progress</h3>
+                    <p>Stay motivated with achievements, streaks, and levels. Make building habits fun and rewarding.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Time Blocking</h3>
+                    <p>Plan your day intentionally. Schedule focused work, breaks, and personal time effortlessly.</p>
+                </div>
+            </div>
         </div>
     </section>
+    
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="team-container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-subtitle">Passionate about digital wellness and human-centered design</p>
+            
+            <div class="team-photo">
+                <img src="images/team.png" alt="Team photo" />
+            </div>
+            
+            <div class="team-grid">
+                
+                <div class="team-member">
+                    <div class="member-avatar"><img src="images/aisha.png" alt="Aisha Faller" /></div>
+                    <div class="member-name">Aisha Faller</div>
+                    <div class="member-role">Project Coordinator</div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar"><img src="images/david.jpg" alt="David Maurer" /></div>
+                    <div class="member-name">David Maurer</div>
+                    <div class="member-role">Infrastructure Specialist</div>
+                </div>
 
-    <section class="sub-caption">
-        <h2> Master your time — boost your focus </h2>
-        <p> Plan your day effortlessly with time blocks for focus & leisure. Activate Focus Mode to track your productive hours and monitor your progress with personalized stats. Take control of your time — one block at a time. </p>
+                <div class="team-member">
+                    <div class="member-avatar"><img src="images/braian.jpeg" alt="Braian Plaku" /></div>
+                    <div class="member-name">Braian Plaku</div>
+                    <div class="member-role">Lead Developer</div>
+                </div>
+        
+            </div>
+        </div>
     </section>
-
-    <footer>
-        <div> VIMAYA </div>
-        <div>
-            <a href="privacypolicy.html" style="color:#777; margin-right: 10px;">Privacy Policy</a>
-            <a href="imprint.html" style="color:#777;">Imprint</a>
+    
+    <!-- Footer -->
+    <footer id="download">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Vimaya</h3>
+                    <p>Take control of your digital life. Build focus, create healthy habits, and achieve more with intentional technology use.</p>
+                    <a href="#" class="download-btn">
+                        <span>Download (Available SOON)</span>
+                    </a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://instagram.com/vimaya.app" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="mailto:contact@vimaya.com">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vimaya. All rights reserved. Made with ❤️ for digital wellness.</p>
+            </div>
         </div>
     </footer>
-</body>
+    
+    <script>
+        
+        
+        // Animated Counters
+        function animateCounter(id, target, duration = 2000) {
+            const element = document.getElementById(id);
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+        
+        // Screenshot Carousel
+        let currentSlide = 0;
+        const carousel = document.getElementById('carousel');
+        const dots = document.querySelectorAll('.dot');
+        
+        function setSlide(index) {
+            currentSlide = index;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+        
+        // Auto-rotate carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % 3;
+            setSlide(currentSlide);
+        }, 4000);
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Trigger counter animations when stats section is visible
+                    if (entry.target.classList.contains('stats')) {
+                        animateCounter('xp-counter', 2450);
+                        animateCounter('streak-counter', 47);
+                        animateCounter('level-counter', 12);
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.feature-card, .team-member').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Observe stats for counter animation
+        const stats = document.querySelector('.stats');
+        if (stats) {
+            observer.observe(stats);
+        }
+        
+        // Header scroll effect
+        const header = document.querySelector('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(18, 24, 38, 0.92)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.4)';
+            } else {
+                header.style.background = 'rgba(18, 24, 38, 0.85)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.35)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle?.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+        
+        // Button animations simplified; heavy effects removed
+        
+        // Ripple animation CSS moved to styles.css
+        
+        
+        
+        // Add some extra interactivity to feature cards (dark-friendly)
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.background = 'var(--surface-2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.background = 'var(--surface)';
+            });
+        });
+        
+        // Typing effect for hero title (optional enhancement)
+        const heroTitle = document.querySelector('.hero h1');
+        const originalText = heroTitle?.textContent;
+        if (heroTitle && originalText) {
+            heroTitle.textContent = '';
+            let charIndex = 0;
+            
+            function typeWriter() {
+                if (charIndex < originalText.length) {
+                    heroTitle.textContent += originalText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            // Start typing effect after a short delay
+            setTimeout(typeWriter, 500);
+        }
+        
+        // Add interactive achievement badges
+        const achievementBadges = [
+            { icon: '🏅', title: 'Early Bird', desc: '5 days of morning focus' },
+            { icon: '💎', title: 'Diamond Mind', desc: '30 day streak achieved' },
+            { icon: '🚀', title: 'Productivity Pro', desc: '100 hours of deep work' }
+        ];
+        
+        // Create floating achievement notification
+        function showAchievement(badge) {
+            const notification = document.createElement('div');
+            notification.className = 'achievement-notification';
+            notification.innerHTML = `
+                <span class="achievement-icon">${badge.icon}</span>
+                <div>
+                    <div class="achievement-title">${badge.title}</div>
+                    <div class="achievement-desc">${badge.desc}</div>
+                </div>
+            `;
+            
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                right: -400px;
+                background: var(--surface);
+                color: var(--text);
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                z-index: 1000;
+                transition: right 0.5s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.right = '30px';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.right = '-400px';
+                setTimeout(() => notification.remove(), 500);
+            }, 3000);
+        }
+        
+        // Trigger achievement notifications on scroll
+        let achievementShown = false;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500 && !achievementShown) {
+                achievementShown = true;
+                showAchievement(achievementBadges[Math.floor(Math.random() * achievementBadges.length)]);
+            }
+        });
+        
+        // Dynamic gradient hover removed for buttons
+        
+        console.log('Vimaya Landing Page Initialized Successfully! 🚀');
+    </script>
+    </body>
 </html>
-
