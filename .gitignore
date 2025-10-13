@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Temporary files
+*.log
+*.tmp
+.cache/
+
+# Node modules (if you add build tools later)
+node_modules/
+npm-debug.log*
+
+# Python (if using local server)
+__pycache__/
+*.py[cod]
