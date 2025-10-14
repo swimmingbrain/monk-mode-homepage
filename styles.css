@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* Opal-inspired: refine theme tokens and enable proper root selector */
 :root {
     --primary-warm: #C26B5C;
     --primary-cool: #6B9B9C;
@@ -19,6 +20,10 @@
     --surface-2: #1f2a3b;
     --text: #E6EAF2;
     --muted: #A6B0C3;
+    /* Opal-inspired glass and hairline accents */
+    --hairline: rgba(255, 255, 255, 0.08);
+    --hairline-strong: rgba(255, 255, 255, 0.14);
+    --glass-bg: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
 }
 
 body {
@@ -26,19 +31,25 @@ body {
     color: var(--text);
     overflow-x: hidden;
     background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+    /* Opal-inspired: improved text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Header */
+/* Opal-inspired: header gets subtle hairline and stronger blur */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 20px 40px;
     background: rgba(18, 24, 38, 0.85);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     z-index: 1000;
     transition: all 0.3s ease;
     box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    border-bottom: 1px solid var(--hairline);
 }
 
 nav {
@@ -62,39 +73,50 @@ nav {
     list-style: none;
 }
 
+/* Opal-inspired: nav links become subtle pills instead of underline-only */
 .nav-links a {
     text-decoration: none;
     color: var(--text);
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid transparent;
 }
 
-.nav-links a:hover {
-    color: var(--primary-warm);
-}
+.nav-links a:hover { color: var(--primary-warm); background: rgba(255,255,255,0.06); border-color: var(--hairline); }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-warm);
-    transition: width 0.3s;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
+/* Replaced underline hover with subtle pill background for modern nav */
+.nav-links a::after { display: none; }
 
 /* Hero Section */
+/* Opal-inspired: hero gets decorative gradient glows */
 .hero {
     margin-top: 80px;
     padding: 80px 40px;
     position: relative;
     z-index: 1;
+}
+
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: -10% -10% auto -10%;
+    height: 60%;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(60% 60% at 20% 30%, rgba(107,155,156,0.25), transparent 60%),
+                radial-gradient(50% 50% at 80% 40%, rgba(194,107,92,0.22), transparent 60%);
+    filter: blur(24px);
+}
+
+.hero::after {
+    inset: auto -10% -15% -10%;
+    height: 40%;
+    background: radial-gradient(60% 60% at 70% 40%, rgba(107,155,156,0.2), transparent 60%),
+                radial-gradient(50% 50% at 30% 60%, rgba(194,107,92,0.18), transparent 60%);
 }
 
 .hero-container {
@@ -108,6 +130,8 @@ nav {
 
 .hero-content {
     animation: slideInLeft 1s ease;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes slideInLeft {
@@ -121,6 +145,7 @@ nav {
     }
 }
 
+/* Opal-inspired: stronger gradient headline presence */
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
@@ -146,33 +171,35 @@ nav {
     margin-bottom: 40px;
 }
 
+/* Opal-inspired: pill buttons with soft ring hover */
 .btn-primary {
     padding: 15px 35px;
     background: var(--gradient);
     color: white;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 999px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
     box-shadow: 0 6px 16px rgba(194, 107, 92, 0.22);
+    border: 1px solid var(--hairline);
 }
 
-.btn-primary:hover { box-shadow: 0 8px 20px rgba(194, 107, 92, 0.28); }
+.btn-primary:hover { box-shadow: 0 0 0 8px rgba(194, 107, 92, 0.08), 0 12px 24px rgba(194, 107, 92, 0.28); transform: translateY(-1px); }
 
 .btn-secondary {
     padding: 15px 35px;
     background: rgba(255,255,255,0.04);
     color: var(--text);
     text-decoration: none;
-    border: 2px solid rgba(255,255,255,0.12);
-    border-radius: 30px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
-.btn-secondary:hover { background: rgba(255,255,255,0.08); color: var(--text); }
+.btn-secondary:hover { background: rgba(255,255,255,0.08); color: var(--text); box-shadow: 0 0 0 8px rgba(255,255,255,0.06); transform: translateY(-1px); }
 
 /* Gamification Stats */
 .stats {
@@ -180,6 +207,7 @@ nav {
     gap: 30px;
 }
 
+/* Opal-inspired: glass cards with hairline borders */
 .stat-card {
     padding: 15px;
     background: var(--surface);
@@ -189,6 +217,8 @@ nav {
     align-items: center;
     gap: 15px;
     transition: transform 0.3s;
+    border: 1px solid var(--hairline);
+    backdrop-filter: blur(8px);
 }
 
 .stat-card:hover {
@@ -237,6 +267,7 @@ nav {
     }
 }
 
+/* Opal-inspired: subtle glow behind phone */
 .phone-mockup {
     position: relative;
     width: 320px;
@@ -247,6 +278,16 @@ nav {
     padding: 10px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.3);
     animation: float-phone 6s ease-in-out infinite;
+}
+
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    inset: -8% -12% auto -12%;
+    height: 50%;
+    background: radial-gradient(60% 60% at 50% 50%, rgba(107,155,156,0.25), transparent 60%);
+    filter: blur(26px);
+    z-index: -1;
 }
 
 @keyframes float-phone {
@@ -285,6 +326,7 @@ nav {
     display: block;
 }
 
+/* Opal-inspired: refined carousel dots */
 .carousel-dots {
     position: absolute;
     bottom: 20px;
@@ -301,15 +343,18 @@ nav {
     background: rgba(255,255,255,0.5);
     cursor: pointer;
     transition: all 0.3s;
+    border: 1px solid var(--hairline);
 }
 
 .dot.active {
     background: white;
     width: 30px;
     border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.25);
 }
 
 /* Features Section */
+/* Opal-inspired: more generous spacing */
 .features {
     padding: 100px 40px;
     background: transparent;
@@ -319,6 +364,7 @@ nav {
 
 .features-container { max-width: 1400px; margin: 0 auto; }
 
+/* Opal-inspired: gradient section titles */
 .section-title {
     text-align: center;
     font-size: 3rem;
@@ -343,6 +389,7 @@ nav {
     gap: 40px;
 }
 
+/* Opal-inspired: glass feature cards with hairline and hover lift */
 .feature-card {
     padding: 40px;
     background: var(--surface);
@@ -351,8 +398,11 @@ nav {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--hairline);
+    backdrop-filter: blur(8px);
 }
 
+/* Subtle gradient top rule */
 .feature-card::before {
     content: '';
     position: absolute;
@@ -426,22 +476,25 @@ nav {
 @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
 /* Team Section */
+/* Opal-inspired: alternating surfaces with hairline separation */
 .team {
     padding: 100px 40px;
     background: var(--bg-alt);
     position: relative;
     z-index: 1;
+    border-top: 1px solid var(--hairline);
 }
 
 .team-container { max-width: 1200px; margin: 0 auto; }
 
+/* Opal-inspired: framed team photo area with inner glow */
 .team-photo {
     width: 100%;
     max-width: 800px;
     margin: 0 auto 60px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
     background: var(--surface);
     padding: 20px;
     text-align: center;
@@ -450,6 +503,17 @@ nav {
     align-items: center;
     justify-content: center;
     color: var(--muted);
+    border: 1px solid var(--hairline);
+    backdrop-filter: blur(8px);
+    position: relative;
+}
+
+.team-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(60% 60% at 50% 40%, rgba(107,155,156,0.14), transparent 60%);
 }
 
 .team-photo img { width: 100%; height: auto; display: block; border-radius: 12px; }
@@ -460,12 +524,15 @@ nav {
     gap: 30px;
 }
 
+/* Opal-inspired: team card glass style */
 .team-member {
     text-align: center;
     padding: 30px;
     background: var(--surface);
     border-radius: 15px;
     transition: all 0.3s ease;
+    border: 1px solid var(--hairline);
+    backdrop-filter: blur(8px);
 }
 
 .team-member:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -490,20 +557,22 @@ nav {
 .member-role { color: var(--primary-cool); font-weight: 500; }
 
 /* Footer */
+/* Opal-inspired: footer with hairline top border */
 footer {
     padding: 60px 40px 40px;
     background: var(--dark);
     color: white;
     position: relative;
     z-index: 1;
+    border-top: 1px solid var(--hairline);
 }
 
 .footer-container { max-width: 1400px; margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 40px; }
 .footer-brand h3 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .footer-brand p { color: #999; line-height: 1.6; margin-bottom: 30px; }
-.download-btn { display: inline-flex; align-items: center; gap: 15px; padding: 15px 30px; background: var(--gradient); color: white; text-decoration: none; border-radius: 30px; font-weight: 600; transition: box-shadow 0.2s ease; box-shadow: 0 6px 16px rgba(194, 107, 92, 0.22); }
-.download-btn:hover { box-shadow: 0 8px 22px rgba(194, 107, 92, 0.28); }
+.download-btn { display: inline-flex; align-items: center; gap: 15px; padding: 15px 30px; background: var(--gradient); color: white; text-decoration: none; border-radius: 999px; font-weight: 600; transition: box-shadow 0.25s ease, transform 0.2s ease; box-shadow: 0 6px 16px rgba(194, 107, 92, 0.22); border: 1px solid var(--hairline); }
+.download-btn:hover { box-shadow: 0 0 0 8px rgba(194, 107, 92, 0.08), 0 12px 24px rgba(194, 107, 92, 0.28); transform: translateY(-1px); }
 .footer-links h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--primary-warm); }
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 10px; }

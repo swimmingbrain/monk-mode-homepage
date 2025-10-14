@@ -9,7 +9,7 @@
 <body>
     
     
-    <!-- Header -->
+    <!-- Header (Opal-inspired: glass header with pill nav) -->
     <header>
         <nav>
             <div class="logo"><img src="images/logo.png" alt="VIMAYA logo" style="height:40px; width:auto; display:block;" /></div>
@@ -27,7 +27,7 @@
         </nav>
     </header>
     
-    <!-- Hero Section -->
+    <!-- Hero Section (Opal-inspired: decorative gradient glows and pill CTAs) -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -84,7 +84,7 @@
         </div>
     </section>
     
-    <!-- Features Section -->
+    <!-- Features Section (Opal-inspired: glass cards with gradient top rule) -->
     <section class="features" id="features">
         <div class="features-container">
             <h2 class="section-title">Features That Empower</h2>
@@ -123,7 +123,7 @@
         </div>
     </section>
     
-    <!-- Team Section -->
+    <!-- Team Section (Opal-inspired: glass team cards and hairline separators) -->
     <section class="team" id="team">
         <div class="team-container">
             <h2 class="section-title">Meet Our Team</h2>
@@ -157,7 +157,7 @@
         </div>
     </section>
     
-    <!-- Footer -->
+    <!-- Footer (Opal-inspired: hairline top border and pill download) -->
     <footer id="download">
         <div class="footer-container">
             <div class="footer-top">
@@ -282,7 +282,7 @@
             observer.observe(stats);
         }
         
-        // Header scroll effect
+        // Header scroll effect (Opal-inspired: stronger background and hairline on scroll)
         const header = document.querySelector('header');
         let lastScroll = 0;
         
@@ -292,9 +292,11 @@
             if (currentScroll > 100) {
                 header.style.background = 'rgba(18, 24, 38, 0.92)';
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.4)';
+                header.style.borderBottom = '1px solid rgba(255,255,255,0.14)';
             } else {
                 header.style.background = 'rgba(18, 24, 38, 0.85)';
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.35)';
+                header.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
             }
             
             lastScroll = currentScroll;
@@ -315,14 +317,16 @@
         
         
         
-        // Add some extra interactivity to feature cards (dark-friendly)
+        // Add some extra interactivity to feature cards (dark-friendly, Opal-inspired hover)
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.background = 'var(--surface-2)';
+                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.35)';
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.background = 'var(--surface)';
+                this.style.boxShadow = '0 5px 20px rgba(0,0,0,0.3)';
             });
         });
         
