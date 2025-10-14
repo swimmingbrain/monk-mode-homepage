@@ -585,12 +585,13 @@ footer {
 .menu-toggle span { width: 25px; height: 3px; background: var(--text); border-radius: 3px; transition: all 0.3s; }
 
 /* Legal pages */
+/* Opal-inspired: legal pages with glass card and hairline */
 .legal-container { max-width: 900px; margin: 120px auto 80px; padding: 0 24px; }
-.legal-container h1 { font-size: 2.2rem; margin-bottom: 10px; }
+.legal-container h1 { font-size: 2.4rem; margin-bottom: 12px; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .legal-container .meta { color: var(--muted); margin-bottom: 30px; font-size: 0.95rem; }
-.legal-card { background: var(--surface); border-radius: 16px; padding: 28px; box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
-.legal-card h2 { font-size: 1.25rem; margin: 22px 0 10px; color: var(--text); }
-.legal-card p, .legal-card li { color: var(--muted); line-height: 1.7; }
+.legal-card { background: var(--surface); border-radius: 16px; padding: 28px; box-shadow: 0 10px 24px rgba(0,0,0,0.25); border: 1px solid var(--hairline); backdrop-filter: blur(8px); }
+.legal-card h2 { font-size: 1.15rem; letter-spacing: 0.2px; margin: 22px 0 10px; color: var(--text); }
+.legal-card p, .legal-card li { color: var(--muted); line-height: 1.8; }
 .legal-card ul { padding-left: 20px; }
 
 /* Ripple animation used by JS */

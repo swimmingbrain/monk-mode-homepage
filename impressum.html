@@ -9,6 +9,7 @@
     <meta name="robots" content="noindex">
 </head>
 <body>
+    <!-- Header (match opal-inspired header styles) -->
     <header>
         <nav>
             <div class="logo"><a href="index.html"><img src="images/logo.png" alt="VIMAYA logo" style="height:40px; width:auto; display:block;" /></a></div>
@@ -26,6 +27,7 @@
         </nav>
     </header>
 
+    <!-- Legal content (glass legal card) -->
     <main class="legal-container">
         <h1>Impressum</h1>
         <div class="meta">According to § 5 TMG</div>
@@ -52,6 +54,7 @@
         </div>
     </main>
 
+    <!-- Footer (match home page visual language) -->
     <footer>
         <div class="footer-container">
             <div class="footer-top">
@@ -88,11 +91,27 @@
     </footer>
 
     <script>
+        // Mobile nav toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         menuToggle?.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
+        });
+
+        // Header scroll effect (match home page)
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const y = window.pageYOffset;
+            if (y > 100) {
+                header.style.background = 'rgba(18, 24, 38, 0.92)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.4)';
+                header.style.borderBottom = '1px solid rgba(255,255,255,0.14)';
+            } else {
+                header.style.background = 'rgba(18, 24, 38, 0.85)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.35)';
+                header.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+            }
         });
     </script>
 </body>
