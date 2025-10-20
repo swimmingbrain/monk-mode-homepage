@@ -37,6 +37,17 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+/* Global link color for readability across all pages */
+a,
+a:visited {
+    color: var(--primary-cool, #6B9B9C);
+}
+
+a:hover,
+a:focus {
+    color: var(--primary-cool, #6B9B9C);
+}
+
 /* Header */
 /* Opal-inspired: header gets subtle hairline and stronger blur */
 header {
@@ -576,7 +587,7 @@ footer {
 .footer-links h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--primary-warm); }
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 10px; }
-.footer-links a { color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.footer-links a { color: var(--primary-cool); text-decoration: none; transition: color 0.3s; }
 .footer-links a:hover { color: var(--primary-cool); }
 .footer-bottom { padding-top: 30px; border-top: 1px solid #333; text-align: center; color: var(--muted); }
 
