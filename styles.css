@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+img, svg { max-width: 100%; height: auto; }
+
 /* Opal-inspired: refine theme tokens and enable proper root selector */
 :root {
     --primary-warm: #C26B5C;
@@ -36,6 +38,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
+
+html { overflow-x: hidden; }
 
 /* Global link color for readability across all pages */
 a,
@@ -108,6 +112,7 @@ nav {
     padding: 80px 40px;
     position: relative;
     z-index: 1;
+    overflow: hidden; /* prevent decorative glows from causing horizontal scroll */
 }
 
 .hero::before,
@@ -657,13 +662,33 @@ footer {
 @media (max-width: 768px) {
     .menu-toggle { display: flex; }
     .nav-links { display: none; }
+    .hero { padding: 80px 20px; }
     .hero-container { grid-template-columns: 1fr; text-align: center; }
     .phone-preview { margin-top: 40px; }
+    .phone-mockup { width: min(100%, 320px); }
     .cta-buttons { flex-direction: column; align-items: center; }
     .stats { flex-direction: column; }
     .footer-top { grid-template-columns: 1fr; text-align: center; }
     .features-grid { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr; }
+    .nav-links.active { left: 20px; right: 20px; max-width: calc(100vw - 40px); }
+}
+
+/* Extra-small screens: make countdown wrap and scale */
+@media (max-width: 480px) {
+    .countdown { flex-wrap: wrap; gap: 8px 12px; padding: 12px 16px; }
+    .countdown-item { min-width: calc(50% - 12px); }
+    .countdown-sep { display: none; }
+    .countdown-value { font-size: clamp(1rem, 7vw, 1.4rem); }
+    .countdown-label { font-size: 0.7rem; }
+}
+
+/* Small phones: wrap earlier and stretch CTA */
+@media (max-width: 640px) {
+    .countdown { max-width: 100%; flex-wrap: wrap; gap: 8px 10px; width: 100%; justify-content: center; }
+    .countdown-item { min-width: calc(50% - 10px); }
+    .cta-buttons { align-items: stretch; }
+    .btn-secondary { width: 100%; justify-content: center; }
 }
 
 
