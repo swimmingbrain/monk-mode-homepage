@@ -21,7 +21,6 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="#download">Download</a></li>
                 <li><a href="mailto:contact@VIMAYA.com">Contact</a></li>
             </ul>
             <div class="menu-toggle">
@@ -40,7 +39,27 @@
                 <p>Transform your relationship with technology. Build healthier habits, structure your time intentionally, and unlock your full potential with VIMAYA.</p>
                 
                 <div class="cta-buttons">
-                    <a href="#download" class="btn-primary">Get Started Free</a>
+                    <div class="countdown" id="launch-countdown" aria-live="polite">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="cd-days">0</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="cd-hours">0</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="cd-mins">0</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-sep">:</div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="cd-secs">0</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
                     <a href="#features" class="btn-secondary">Learn More</a>
                 </div>
                 
@@ -163,15 +182,12 @@
     </section>
     
     <!-- Footer (Opal-inspired: hairline top border and pill download) -->
-    <footer id="download">
+    <footer>
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
                     <h3>VIMAYA</h3>
                     <p>Take control of your digital life. Build focus, create healthy habits, and achieve more with intentional technology use.</p>
-                    <a href="#" class="download-btn">
-                        <span>Download (Available SOON)</span>
-                    </a>
                 </div>
                 
                 <div class="footer-links">
@@ -250,6 +266,39 @@
                 }
             });
         });
+        
+        // Countdown to Nov 28
+        (function initCountdown() {
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minsEl = document.getElementById('cd-mins');
+            const secsEl = document.getElementById('cd-secs');
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const hasPassedNov28 = (now.getMonth() > 10) || (now.getMonth() === 10 && now.getDate() > 28);
+            const targetYear = hasPassedNov28 ? currentYear + 1 : currentYear;
+            const target = new Date(targetYear, 10, 28, 0, 0, 0);
+
+            function updateCountdown() {
+                const diffMs = target.getTime() - Date.now();
+                const clamped = Math.max(0, diffMs);
+                const totalSeconds = Math.floor(clamped / 1000);
+                const days = Math.floor(totalSeconds / 86400);
+                const hours = Math.floor((totalSeconds % 86400) / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                daysEl.textContent = String(days);
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minsEl.textContent = String(minutes).padStart(2, '0');
+                secsEl.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
         
         // Scroll animations
         const observerOptions = {

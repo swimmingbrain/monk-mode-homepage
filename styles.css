@@ -180,6 +180,7 @@ nav {
     display: flex;
     gap: 20px;
     margin-bottom: 40px;
+    align-items: center;
 }
 
 /* Opal-inspired: pill buttons with soft ring hover */
@@ -199,7 +200,7 @@ nav {
 .btn-primary:hover { box-shadow: 0 0 0 8px rgba(194, 107, 92, 0.08), 0 12px 24px rgba(194, 107, 92, 0.28); transform: translateY(-1px); }
 
 .btn-secondary {
-    padding: 15px 35px;
+    padding: 14px 32px;
     background: rgba(255,255,255,0.04);
     color: var(--text);
     text-decoration: none;
@@ -208,9 +209,30 @@ nav {
     font-weight: 600;
     font-size: 1.1rem;
     transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
 }
 
 .btn-secondary:hover { background: rgba(255,255,255,0.08); color: var(--text); box-shadow: 0 0 0 8px rgba(255,255,255,0.06); transform: translateY(-1px); }
+
+/* Countdown (replaces primary CTA) */
+.countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 22px;
+    background: var(--glass-bg);
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.countdown-item { text-align: center; min-width: 70px; }
+.countdown-value { font-size: 1.6rem; font-weight: 800; color: var(--text); line-height: 1; }
+.countdown-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; }
+.countdown-sep { font-size: 1.6rem; color: var(--muted); opacity: 0.6; }
 
 /* Gamification Stats */
 .stats {
